@@ -1,0 +1,133 @@
+/* 
+  DEMO 02: CSS Basics - Stylesheet
+  Theme: Anime Character Cards
+  
+  CSS RULES: selector { property: value; }
+  - Selector: What element to style
+  - Property: What aspect to change (color, size, etc.)
+  - Value: The specific setting
+*/
+
+/* ============================================
+   ELEMENT SELECTOR
+   Styles ALL elements of that type
+   ============================================ */
+body {
+  /* Background color */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* Font styling */
+  font-family: 'Arial', sans-serif;
+  
+  /* Spacing */
+  margin: 0;
+  padding: 20px;
+  
+  /* Layout */
+  min-height: 100vh; /* vh = viewport height (100vh = full screen) */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 2.5em; /* em = relative to parent font size */
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   CLASS SELECTOR (.classname)
+   Styles elements with that class attribute
+   ============================================ */
+.character-card {
+  /* Box model: margin, border, padding, content */
+  margin: 20px auto; /* auto centers horizontally */
+  padding: 30px;
+  
+  /* Visual styling */
+  background-color: white;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  
+  /* Size */
+  width: min(500px, 90vw); /* Responsive: max 500px or 90% of viewport */
+  
+  /* Spacing between elements inside */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between child elements */
+}
+
+.character-name {
+  color: #667eea;
+  font-size: 1.8em;
+  margin: 0; /* Remove default margin */
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.character-description {
+  color: #333;
+  line-height: 1.6; /* Space between lines */
+  font-size: 1.1em;
+}
+
+.tag {
+  /* Inline-block allows width/height but stays inline */
+  display: inline-block;
+  background-color: #764ba2;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+/* ============================================
+   ID SELECTOR (#idname)
+   Styles the ONE element with that ID
+   ============================================ */
+#special-card {
+  /* This card gets special treatment */
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: 3px solid gold;
+}
+
+#special-card .character-name {
+  color: white;
+  border-bottom-color: white;
+}
+
+#special-card .character-description {
+  color: white;
+}
+
+/* ============================================
+   CASCADE & SPECIFICITY
+   More specific selectors override less specific ones
+   ============================================ */
+/* This is LESS specific, so it applies first */
+.character-card {
+  background-color: white;
+}
+
+/* This is MORE specific (ID + class), so it wins */
+#special-card.character-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* ============================================
+   PSEUDO-CLASSES
+   Style elements in special states
+   ============================================ */
+.character-card:hover {
+  /* When mouse hovers over card */
+  transform: translateY(-5px); /* Move up 5px */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bigger shadow */
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+.tag:hover {
+  background-color: #667eea;
+  cursor: pointer; /* Show hand cursor */
+}
+

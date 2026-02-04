@@ -1,0 +1,185 @@
+/* 
+  TP1 - Option B: CSS Business Card
+  Starter Stylesheet
+  
+  This is a basic template to get you started.
+  Customize colors, fonts, and effects to make it your own!
+*/
+
+/* 
+  ============================================
+  PAGE STYLING (Background, Centering)
+  ============================================
+*/
+body {
+  /* 
+    Center the card on the page
+    Flexbox makes this easy!
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  
+  /* Background color or gradient */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* Font styling */
+  font-family: 'Arial', sans-serif;
+}
+
+/* 
+  ============================================
+  BUSINESS CARD CONTAINER
+  ============================================
+*/
+.business-card {
+  /* 
+    Standard business card size:
+    3.5 inches × 2 inches
+    = 336px × 192px (at 96 DPI)
+  */
+  width: 336px;
+  height: 192px;
+  
+  /* 
+    Background and visual styling
+    Customize these colors!
+  */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  /* 
+    Padding creates space inside the card
+    Adjust as needed
+  */
+  padding: 20px;
+  
+  /* 
+    Layout: Stack sections vertically
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 
+  ============================================
+  NAME SECTION
+  ============================================
+*/
+.name-section h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.name-section .title {
+  margin: 5px 0 0 0;
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}
+
+/* 
+  ============================================
+  CONTACT SECTION
+  ============================================
+*/
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85em;
+  color: #555;
+}
+
+.contact-item .icon {
+  font-size: 1.2em;
+}
+
+/* 
+  ============================================
+  SKILLS/TAGLINE SECTION
+  ============================================
+*/
+.skills-section .tagline {
+  margin: 0;
+  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
+}
+
+/* 
+  ============================================
+  SOCIAL MEDIA SECTION
+  ============================================
+*/
+.social-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-link {
+  font-size: 0.8em;
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #764ba2;
+}
+
+/* 
+  ============================================
+  HOVER EFFECT (BONUS)
+  ============================================
+  Uncomment to add a hover effect!
+*/
+/*
+.business-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+*/
+
+/* 
+  ============================================
+  RESPONSIVE DESIGN
+  ============================================
+  Make card scale on smaller screens
+*/
+@media (max-width: 400px) {
+  .business-card {
+    width: 90vw;
+    height: auto;
+    min-height: 192px;
+  }
+}
+
+/* 
+  ============================================
+  YOUR TURN!
+  ============================================
+  
+  Customize:
+  - Colors (background, text, accents)
+  - Fonts (use Google Fonts!)
+  - Spacing (padding, margins)
+  - Effects (shadows, gradients, animations)
+  - Layout (try different arrangements)
+  
+  Make it YOURS! 🎨
+*/
+

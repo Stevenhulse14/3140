@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 
+  DEMO 02: CSS Basics
+  Theme: Anime Character Cards
+  Learning Goals: Selectors, cascade, spacing, reusable classes
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Character Gallery - CSS Demo</title>
+  <!-- LINKING CSS: External stylesheet in <head> -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🎌 Anime Character Gallery 🎌</h1>
+  </header>
+
+  <main>
+    <!-- 
+      CLASS SELECTOR: .character-card
+      Multiple elements can share the same class
+      Use classes for reusable styles
+    -->
+    <section class="character-card">
+      <h2 class="character-name">Naruto Uzumaki</h2>
+      <p class="character-description">A ninja from the Hidden Leaf Village who dreams of becoming Hokage!</p>
+      <span class="tag">Ninja</span>
+      <span class="tag">Protagonist</span>
+    </section>
+
+    <!-- Same class, different content = consistent styling -->
+    <section class="character-card">
+      <h2 class="character-name">Goku</h2>
+      <p class="character-description">A Saiyan warrior who loves fighting strong opponents!</p>
+      <span class="tag">Saiyan</span>
+      <span class="tag">Fighter</span>
+    </section>
+
+    <!-- 
+      ID SELECTOR: #special-card
+      IDs are unique (only one per page)
+      Use IDs for specific, one-of-a-kind elements
+    -->
+    <section id="special-card" class="character-card">
+      <h2 class="character-name">Luffy</h2>
+      <p class="character-description">A pirate captain searching for the One Piece treasure!</p>
+      <span class="tag">Pirate</span>
+      <span class="tag">Captain</span>
+    </section>
+  </main>
+</body>
+</html>
+

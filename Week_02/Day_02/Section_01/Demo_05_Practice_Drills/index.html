@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 
+  DEMO 05: Practice Drills
+  Theme: Anime Training Grounds
+  Learning Goals: Quick problems to build confidence and speed
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Training Grounds - Practice Drills</title>
+  <link rel="stylesheet" href="drills-styles.css">
+</head>
+<body>
+  <header>
+    <h1>🥋 Anime Training Grounds 🥋</h1>
+    <p>Practice makes perfect! Complete these drills to level up your skills.</p>
+  </header>
+
+  <main>
+    <section class="drill-card">
+      <h2>Drill 1: Count Evens</h2>
+      <p>Return how many even numbers are in the array.</p>
+      <div class="code-box">
+        <pre>function countEvens(nums) {
+  // TODO: Your code here
+}
+
+console.log(countEvens([1,2,3,4,5,6])); // Should return 3</pre>
+      </div>
+      <button onclick="testDrill1()">Test Solution</button>
+      <div id="drill1-result" class="result"></div>
+    </section>
+
+    <section class="drill-card">
+      <h2>Drill 2: Find Maximum</h2>
+      <p>Find the largest number in an array (without using Math.max).</p>
+      <div class="code-box">
+        <pre>function findMax(nums) {
+  // TODO: Your code here
+}
+
+console.log(findMax([3, 7, 2, 9, 1])); // Should return 9</pre>
+      </div>
+      <button onclick="testDrill2()">Test Solution</button>
+      <div id="drill2-result" class="result"></div>
+    </section>
+
+    <section class="drill-card">
+      <h2>Drill 3: Remove Short Words</h2>
+      <p>Use filter to remove words shorter than minLen.</p>
+      <div class="code-box">
+        <pre>function removeShort(words, minLen) {
+  // TODO: Your code here (use filter!)
+}
+
+console.log(removeShort(['hi', 'hello', 'world', 'a'], 3)); 
+// Should return ['hello', 'world']</pre>
+      </div>
+      <button onclick="testDrill3()">Test Solution</button>
+      <div id="drill3-result" class="result"></div>
+    </section>
+
+    <section class="drill-card">
+      <h2>Drill 4: Most Common Item</h2>
+      <p>Given an inventory object, return the key with the largest value.</p>
+      <div class="code-box">
+        <pre>function mostCommon(inv) {
+  // TODO: Your code here
+}
+
+console.log(mostCommon({ apple: 2, banana: 5, pear: 1 })); 
+// Should return "banana"</pre>
+      </div>
+      <button onclick="testDrill4()">Test Solution</button>
+      <div id="drill4-result" class="result"></div>
+    </section>
+  </main>
+
+  <script src="drills-script.js"></script>
+</body>
+</html>
+

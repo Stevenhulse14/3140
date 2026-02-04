@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- 
+  WHACK-A-MOLE GAME - HTML FILE
+  ==============================
+  
+  This file defines the STRUCTURE of the game page.
+  HTML = HyperText Markup Language = the skeleton/bones of your webpage.
+  
+  LEARNING GOALS:
+  - Understand HTML document structure
+  - Learn about semantic HTML elements
+  - Understand how to link CSS and JavaScript files
+  - Practice using IDs and classes for element selection
+-->
+<html lang="en">
+<!-- 
+  <html> = Root element of the page
+  lang="en" = Language is English (helps screen readers and SEO)
+-->
+
+<head>
+  <!-- 
+    <head> = Contains metadata (info about the page)
+    This section is NOT visible to users, but tells the browser important info
+  -->
+  
+  <!-- 
+    META CHARSET: Tells browser what character encoding to use
+    UTF-8 supports all characters (emojis, special symbols, etc.)
+    Always include this!
+  -->
+  <meta charset="UTF-8">
+  
+  <!-- 
+    TITLE: Shows in browser tab and bookmarks
+    This is what users see when they bookmark your page
+  -->
+  <title>Whack-a-mole</title>
+  
+  <!-- 
+    LINKING CSS FILE:
+    =================
+    - <link> = Links external resources
+    - rel="stylesheet" = This is a CSS stylesheet
+    - href="style.css" = Path to the CSS file (same folder)
+    
+    WHY IN <HEAD>?
+    - CSS loads BEFORE content renders
+    - Prevents "flash of unstyled content" (FOUC)
+    - Users see styled page immediately
+  -->
+  <link rel="stylesheet" href="style.css"/>
+  
+  <!-- 
+    LINKING JAVASCRIPT FILE:
+    ========================
+    - <script> = Loads JavaScript code
+    - src="index.js" = Path to the JavaScript file
+    - defer = Wait until HTML is fully loaded before running JS
+    
+    WHY DEFER?
+    - Ensures HTML elements exist before JavaScript tries to select them
+    - Prevents "Cannot read property of null" errors
+    - Alternative: Put <script> at bottom of <body> (no defer needed)
+  -->
+  <script src="index.js" defer></script>
+</head>
+
+<body> 
+  <!-- 
+    <body> = Visible content of the webpage
+    Everything users see goes here!
+  -->
+  
+  <!-- 
+    SCORE DISPLAY:
+    =============
+    - <h1> = Heading level 1 (biggest, most important heading)
+    - id="score" = Unique identifier for this element
+    - JavaScript will find this using: document.getElementById('score')
+    - Currently shows "0", but JavaScript will update this during gameplay
+  -->
+  <h1 id="score">0</h1>
+  
+  <!-- 
+    GAME BOARD CONTAINER:
+    =====================
+    - <div> = Generic container (like a box)
+    - id="whack-a-mole" = Unique identifier for the game board
+    - JavaScript can select this with: document.getElementById('whack-a-mole')
+    - CSS styles this container (green background, border, etc.)
+  -->
+  <div id="whack-a-mole">
+    <!-- 
+      INDIVIDUAL HOLES:
+      =================
+      - Each <div class="hole"> = One hole on the game board
+      - class="hole" = Reusable identifier (many elements can share this class)
+      - JavaScript selects all holes with: document.querySelectorAll('.hole')
+      - CSS styles all holes the same way
+      - When a mole appears, JavaScript adds class="mole" to one of these
+      - There are 9 holes total = 3x3 grid
+    -->
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+  </div>
+</body>
+</html>

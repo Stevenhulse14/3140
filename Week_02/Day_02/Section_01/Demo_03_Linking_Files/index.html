@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 
+  DEMO 03: Linking Files
+  Theme: Comic Book Hero
+  Learning Goals: Connect HTML → CSS → JS the right way
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comic Hero Power Tracker - Linking Files Demo</title>
+  
+  <!-- 
+    STEP 1: LINK CSS FILE
+    - Place in <head> section
+    - rel="stylesheet" tells browser it's CSS
+    - href points to the CSS file path
+    - File paths are relative to this HTML file
+  -->
+  <link rel="stylesheet" href="hero-styles.css">
+</head>
+<body>
+  <header>
+    <h1>🦸 Comic Hero Power Tracker 🦸</h1>
+  </header>
+
+  <main>
+    <section class="hero-card">
+      <h2 id="hero-name">Super Hero</h2>
+      <div class="power-meter">
+        <p>Power Level: <span id="power-level">100</span></p>
+        <button id="power-up-btn">⚡ Power Up!</button>
+        <button id="reset-btn">🔄 Reset</button>
+      </div>
+      <p id="status-message">Ready for action!</p>
+    </section>
+  </main>
+
+  <!-- 
+    STEP 2: LINK JAVASCRIPT FILE
+    - Place at BOTTOM of <body> (before closing </body>)
+    - This ensures HTML loads BEFORE JavaScript runs
+    - Alternative: Use defer attribute in <head>
+    - src points to the JavaScript file path
+  -->
+  <script src="hero-script.js"></script>
+</body>
+</html>
+

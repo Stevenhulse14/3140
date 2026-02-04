@@ -1,0 +1,247 @@
+/* 
+  WHACK-A-MOLE GAME - CSS STYLESHEET
+  ===================================
+  
+  This file defines the APPEARANCE of the game.
+  CSS = Cascading Style Sheets = the skin/clothes of your webpage.
+  
+  LEARNING GOALS:
+  - Understand CSS selectors (element, ID, class)
+  - Learn flexbox layout system
+  - Understand how to use background images
+  - Practice CSS properties and values
+  
+  CSS RULE STRUCTURE:
+  selector {
+    property: value;
+    property: value;
+  }
+*/
+
+/* 
+  ============================================
+  BODY STYLES (The entire page)
+  ============================================
+  
+  SELECTOR: body = Targets the <body> HTML element
+*/
+body {
+  /* 
+    FLEXBOX LAYOUT:
+    ===============
+    display: flex = Makes body a flex container
+    This allows us to easily center content and arrange items
+  */
+  display: flex;
+  
+  /* 
+    flex-direction: column = Stack children vertically (top to bottom)
+    - row = horizontal (left to right) - default
+    - column = vertical (top to bottom)
+  */
+  flex-direction: column;
+  
+  /* 
+    justify-content: center = Centers content along MAIN axis
+    - Since flex-direction is column, main axis is vertical
+    - This centers content vertically
+  */
+  justify-content: center;
+  
+  /* 
+    align-items: center = Centers content along CROSS axis
+    - Since flex-direction is column, cross axis is horizontal
+    - This centers content horizontally
+  */
+  align-items: center;
+  
+  /* 
+    VIEWPORT UNITS:
+    ===============
+    - 100vw = 100% of viewport width (full screen width)
+    - 100vh = 100% of viewport height (full screen height)
+    - These units are responsive (adapt to screen size)
+  */
+  width: 100vw;
+  height: 100vh;
+  
+  /* 
+    FONT FAMILY:
+    ============
+    Lists fonts in order of preference
+    Browser tries first font, then second, etc.
+    'sans-serif' = fallback to any sans-serif font
+  */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* 
+  ============================================
+  GAME BOARD CONTAINER (#whack-a-mole)
+  ============================================
+  
+  SELECTOR: #whack-a-mole = Targets element with id="whack-a-mole"
+  # = ID selector (only ONE element should have this ID)
+*/
+#whack-a-mole {
+  /* 
+    BACKGROUND COLOR:
+    =================
+    darkolivegreen = Makes the board look like grass/dirt
+    This is the "playing field" color
+  */
+  background-color: darkolivegreen;
+  
+  /* 
+    BORDER:
+    =======
+    - solid = Solid line (not dashed or dotted)
+    - 20px = Border thickness
+    - #000 = Black color (hex code)
+    Creates a thick black border around the game board
+  */
+  border: solid 20px #000;
+  
+  /* 
+    PADDING:
+    ========
+    Space INSIDE the element (between border and content)
+    20px = 20 pixels of space on all sides
+    Creates breathing room between border and holes
+  */
+  padding: 20px;
+  
+  /* 
+    WIDTH:
+    ======
+    360px = Fixed width (3 holes × 110px + margins = ~360px)
+    This creates a square-ish game board
+  */
+  width: 360px;
+  
+  /* 
+    FLEXBOX FOR GRID LAYOUT:
+    ========================
+    display: flex = Makes this a flex container
+    flex-wrap: wrap = Allows items to wrap to next line
+    Together, this creates a grid: items flow left-to-right, then wrap
+  */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 
+  ============================================
+  HOLE STYLES (.hole)
+  ============================================
+  
+  SELECTOR: .hole = Targets ALL elements with class="hole"
+  . = Class selector (many elements can share this class)
+  
+  This styles each individual hole on the game board
+*/
+.hole {
+  /* 
+    BACKGROUND IMAGE:
+    =================
+    url("images/hole.png") = Path to the hole image file
+    - Path is relative to the CSS file location
+    - images/ = folder name
+    - hole.png = image filename
+    This displays the hole image as the background
+  */
+  background-image: url("images/hole.png");
+  
+  /* 
+    BACKGROUND SIZE:
+    ================
+    contain = Scale image to fit inside element without cropping
+    - Keeps entire image visible
+    - May leave empty space if aspect ratios don't match
+    Alternative: cover = fills entire area (may crop)
+  */
+  background-size: contain;
+  
+  /* 
+    DIMENSIONS:
+    ===========
+    width: 110px = Hole width (110 pixels)
+    height: 123px = Hole height (123 pixels)
+    These match the image dimensions for best appearance
+  */
+  width: 110px;
+  height: 123px;
+  
+  /* 
+    MARGIN:
+    =======
+    Space OUTSIDE the element (between holes)
+    5px = 5 pixels of space on all sides
+    Creates gaps between holes so they don't touch
+  */
+  margin: 5px;
+}
+
+/* 
+  ============================================
+  MOLE STYLES (.mole)
+  ============================================
+  
+  SELECTOR: .mole = Targets elements with class="mole"
+  
+  IMPORTANT: This class is ADDED by JavaScript when a mole appears!
+  When a hole has BOTH .hole AND .mole classes, it shows the mole image.
+  
+  CSS CASCADE:
+  - .hole sets the base styles (size, position)
+  - .mole OVERRIDES the background-image
+  - Result: Same size/position, but mole image instead of hole image
+*/
+.mole {
+  /* 
+    BACKGROUND IMAGE OVERRIDE:
+    ===========================
+    When JavaScript adds class="mole" to a hole, this CSS rule applies
+    It replaces the hole image with the mole image
+    The hole keeps its size/position from .hole, but shows mole.png
+  */
+  background-image: url("images/mole.png");
+  
+  /* 
+    NOTE: We don't need to repeat width/height/margin here
+    because .mole will be ADDED to elements that already have .hole
+    CSS cascade: both rules apply, .mole's background-image wins
+  */
+}
+
+/* 
+  ============================================
+  CSS CONCEPTS SUMMARY:
+  ============================================
+  
+  1. SELECTORS:
+     - body = Element selector (all <body> elements)
+     - #id = ID selector (one specific element)
+     - .class = Class selector (all elements with that class)
+  
+  2. FLEXBOX:
+     - display: flex = Creates flex container
+     - flex-direction = Main axis direction
+     - justify-content = Alignment on main axis
+     - align-items = Alignment on cross axis
+     - flex-wrap = Allow wrapping to new line
+  
+  3. SIZING:
+     - px = Pixels (fixed size)
+     - vw/vh = Viewport units (responsive)
+     - % = Percentage of parent
+  
+  4. SPACING:
+     - margin = Space OUTSIDE element
+     - padding = Space INSIDE element
+  
+  5. BACKGROUNDS:
+     - background-color = Solid color
+     - background-image = Image file
+     - background-size = How to scale image
+*/

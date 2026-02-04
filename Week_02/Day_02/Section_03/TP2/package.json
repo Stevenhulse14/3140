@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe-game",
+  "version": "1.0.0",
+  "description": "A command-line Tic-Tac-Toe game built with Node.js",
+  "main": "tictactoe.js",
+  "scripts": {
+    "start": "node tictactoe.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tictactoe",
+    "game",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+

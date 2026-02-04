@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 
+  DEMO 06: DOM Intro
+  Theme: Interactive Pokemon Battle
+  Learning Goals: Select elements, change text/classes, respond to clicks
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pokemon Battle - DOM Intro</title>
+  <link rel="stylesheet" href="battle-styles.css">
+</head>
+<body>
+  <header>
+    <h1>⚔️ Pokemon Battle Arena ⚔️</h1>
+  </header>
+
+  <main>
+    <section class="battle-area">
+      <div class="pokemon-card" id="pokemon1">
+        <h2 id="pokemon1-name">Pikachu</h2>
+        <div class="hp-bar">
+          <div class="hp-fill" id="pokemon1-hp" style="width: 100%"></div>
+        </div>
+        <p>HP: <span id="pokemon1-hp-text">100</span>/100</p>
+        <button class="attack-btn" id="attack1">⚡ Thunderbolt</button>
+      </div>
+
+      <div class="vs">VS</div>
+
+      <div class="pokemon-card" id="pokemon2">
+        <h2 id="pokemon2-name">Charizard</h2>
+        <div class="hp-bar">
+          <div class="hp-fill" id="pokemon2-hp" style="width: 100%"></div>
+        </div>
+        <p>HP: <span id="pokemon2-hp-text">100</span>/100</p>
+        <button class="attack-btn" id="attack2">🔥 Flamethrower</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="reset-btn">🔄 Reset Battle</button>
+      <button id="toggle-theme">🌙 Toggle Theme</button>
+    </section>
+
+    <section class="battle-log">
+      <h3>Battle Log</h3>
+      <div id="log-messages"></div>
+    </section>
+  </main>
+
+  <script src="battle-script.js"></script>
+</body>
+</html>
+

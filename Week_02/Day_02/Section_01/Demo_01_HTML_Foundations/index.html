@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- 
+  DEMO 01: HTML Foundations
+  Theme: Pokemon Trainer Profile
+  Learning Goals: Structure, semantic tags, clean page layout
+-->
+<html lang="en">
+<head>
+  <!-- Meta tags provide information about the document -->
+  <meta charset="UTF-8">
+  <!-- UTF-8 ensures special characters (like emojis) display correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Viewport makes the page responsive on mobile devices -->
+  <title>Pokemon Trainer Profile - HTML Demo</title>
+  <!-- Title appears in browser tab and bookmarks -->
+</head>
+<body>
+  <!-- 
+    Semantic HTML: Use meaningful tags that describe content purpose
+    - <header>: Top section, usually contains navigation/logo
+    - <main>: Main content area (only one per page)
+    - <section>: Groups related content
+    - <article>: Standalone content piece
+    - <footer>: Bottom section
+  -->
+
+  <!-- Header: Top navigation area -->
+  <header>
+    <h1>🌟 Pokemon Trainer Profile 🌟</h1>
+    <!-- h1 = most important heading (only one per page) -->
+    <nav>
+      <!-- nav = navigation links -->
+      <a href="#about">About</a> | 
+      <a href="#pokemon">My Pokemon</a> | 
+      <a href="#badges">Badges</a>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- Section 1: About the trainer -->
+    <section id="about">
+      <h2>About Me</h2>
+      <!-- h2 = second-level heading -->
+      
+      <article>
+        <!-- article = standalone content that makes sense on its own -->
+        <h3>Trainer: Ash Ketchum</h3>
+        <p>
+          <!-- p = paragraph for text content -->
+          I'm a Pokemon trainer from Pallet Town! My dream is to become a Pokemon Master.
+          I've been traveling the world catching Pokemon and battling gym leaders.
+        </p>
+        
+        <!-- Lists: ul = unordered (bullets), ol = ordered (numbers) -->
+        <h4>My Hobbies:</h4>
+        <ul>
+          <!-- ul = unordered list (bullet points) -->
+          <li>Catching Pokemon</li>
+          <!-- li = list item -->
+          <li>Battling trainers</li>
+          <li>Exploring new regions</li>
+          <li>Making friends with Pokemon</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Section 2: Pokemon team -->
+    <section id="pokemon">
+      <h2>My Pokemon Team</h2>
+      
+      <article>
+        <h3>Current Team</h3>
+        <!-- ol = ordered list (numbered) -->
+        <ol>
+          <li>Pikachu ⚡</li>
+          <li>Charizard 🔥</li>
+          <li>Bulbasaur 🌱</li>
+          <li>Squirtle 💧</li>
+        </ol>
+      </article>
+    </section>
+
+    <!-- Section 3: Badges -->
+    <section id="badges">
+      <h2>Gym Badges Earned</h2>
+      
+      <article>
+        <h3>Kanto Region Badges</h3>
+        <ul>
+          <li>Boulder Badge 🪨</li>
+          <li>Cascade Badge 💧</li>
+          <li>Thunder Badge ⚡</li>
+          <li>Rainbow Badge 🌈</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Links: a = anchor tag for hyperlinks -->
+    <section>
+      <h2>Resources</h2>
+      <p>
+        Learn more about Pokemon at 
+        <a href="https://www.pokemon.com" target="_blank">Pokemon.com</a>
+        <!-- 
+          href = where the link goes
+          target="_blank" = opens in new tab
+        -->
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer: Bottom section -->
+  <footer>
+    <p>&copy; 2024 Pokemon Trainer Profile Demo | HTML Foundations Practice</p>
+    <!-- &copy; = copyright symbol (HTML entity) -->
+  </footer>
+</body>
+</html>
+
