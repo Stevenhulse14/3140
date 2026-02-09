@@ -187,7 +187,7 @@ This ensures the code returns to a fresh state, allowing a new game to start.
 
  
  
- <!-- <div class="gameboardContainer">
+  <div class="gameboardContainer">
         <table class="gameboard">
             <tr>
                 <td id="00"></td>
@@ -205,7 +205,7 @@ This ensures the code returns to a fresh state, allowing a new game to start.
                 <td id="22"></td>
            </tr>
        </table>
-    </div> -->
+    </div> 
 
 
 up above is an alternative way to create the gameboard using a table.
