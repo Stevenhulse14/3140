@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  html {
+    background-color: #222;
+    color: white;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table{
+    /*height: 1000px;
+    width: 1000px;*/
+    background-color: white;
+  }
+  td{
+    width: 50px;
+    height: 50px;
+    /*padding: 5px;*/
+    background-color: grey;
+  }
+  
+  /* your CSS below! */
