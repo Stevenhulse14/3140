@@ -1,0 +1,16 @@
+{
+  "name": "async-micro-project",
+  "version": "1.0.0",
+  "description": "A task queue manager demonstrating asynchronicity patterns",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "async",
+    "promises",
+    "task-queue"
+  ],
+  "author": "",
+  "license": "ISC"
+}

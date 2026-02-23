@@ -1,0 +1,21 @@
+{
+  "name": "express-micro-project",
+  "version": "1.0.0",
+  "description": "A simple blog API built with Express.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "blog",
+    "rest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

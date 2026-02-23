@@ -1,0 +1,21 @@
+{
+  "name": "class-vote",
+  "version": "1.0.0",
+  "description": "Simple Classroom Voting App (Express + HTML + ngrok-ready)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "voting",
+    "poll",
+    "classroom"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
