@@ -1,0 +1,225 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* ============================================
+   SEARCH SECTION
+   ============================================ */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#pokemonInput {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#pokemonInput:focus {
+  border-color: #667eea;
+}
+
+#searchBtn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#searchBtn:hover {
+  background: #5568d3;
+}
+
+#searchBtn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   POKÉMON DISPLAY
+   ============================================ */
+.pokemon-display {
+  min-height: 100px;
+}
+
+.pokemon-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+}
+
+.pokemon-card h3 {
+  color: #667eea;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.pokemon-sprite {
+  width: 150px;
+  height: 150px;
+  margin: 15px 0;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.pokemon-info {
+  margin: 15px 0;
+  text-align: left;
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.pokemon-info p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #218838;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+.team-display {
+  min-height: 100px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+}
+
+.team-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.team-member span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.remove-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+}
+
+.team-count {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   ERROR MESSAGES
+   ============================================ */
+.error {
+  color: #dc3545;
+  text-align: center;
+  padding: 15px;
+  background: #f8d7da;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+}

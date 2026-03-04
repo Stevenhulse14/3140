@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Team Builder</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚡ Pokémon Team Builder ⚡</h1>
+      <p>Search for Pokémon and build your dream team!</p>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <h2>Search Pokémon</h2>
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="pokemonInput" 
+          placeholder="Enter Pokémon name (e.g., pikachu)"
+        >
+        <button id="searchBtn">Search Pokémon</button>
+      </div>
+      
+      <!-- Display area for searched Pokémon -->
+      <div id="pokemonDisplay" class="pokemon-display"></div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2>Your Team</h2>
+      <div id="teamDisplay" class="team-display">
+        <p class="empty-message">Your team is empty. Search and add Pokémon!</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Load the main JavaScript file -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
