@@ -1,0 +1,21 @@
+{
+  "name": "catemon-api",
+  "version": "1.0.0",
+  "description": "A fun Express API for Catèmon - fictional creatures inspired by Pokémon but based on real cats",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "catemon",
+    "learning"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
