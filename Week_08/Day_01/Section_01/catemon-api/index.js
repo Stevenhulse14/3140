@@ -10,12 +10,22 @@
 const express = require("express");
 const path = require("path");
 const routes = require("./routes");
+const cors = require("cors");
+const morgan = require("morgan");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware: Parse JSON request bodies (required for POST and PUT)
 app.use(express.json());
+// Middleware : Parse URL-encoded request bodies (optional, for form submissions)
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware: Enable CORS (Cross-Origin Resource Sharing)
+app.use(cors());
+
+// Middleware: HTTP request logger
+app.use(morgan("dev"));
 
 // Serve static files (card images) from public/ folder
 // Images at public/images/card-1.png become available at /images/card-1.png

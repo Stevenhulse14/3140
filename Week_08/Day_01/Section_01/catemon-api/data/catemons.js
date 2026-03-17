@@ -18,8 +18,9 @@ const catemons = [
     name: "Shadow",
     type: "Dark",
     personality: "bully",
-    description: "Big glowing emerald eyes, black as the night. A bully who loves to eat.",
-    imageUrl: "/images/card-1.png",
+    description:
+      "Big glowing emerald eyes, black as the night. A bully who loves to eat.",
+    imageUrl: "/images/Shadow.png",
   },
   {
     id: 2,
@@ -27,15 +28,16 @@ const catemons = [
     type: "Electric",
     personality: "rambunctious",
     description: "Gray, full of energy, tongue always sticking out.",
-    imageUrl: "/images/card-2.png",
+    imageUrl: "/images/Graybaby.png",
   },
   {
     id: 3,
     name: "Leelee",
     type: "Fairy",
     personality: "sweet and flirty",
-    description: "Black and white like a cow, sweet and flirty like a princess.",
-    imageUrl: "/images/card-3.png",
+    description:
+      "Black and white like a cow, sweet and flirty like a princess.",
+    imageUrl: "/images/Leelee.png",
   },
   {
     id: 4,
@@ -43,31 +45,34 @@ const catemons = [
     type: "Fire",
     personality: "spoiled",
     description: "Very cute but annoying and spoiled, an uppity scaredy cat.",
-    imageUrl: "/images/card-4.png",
+    imageUrl: "/images/Orange.png",
   },
   {
     id: 5,
     name: "Chucky",
     type: "Normal",
     personality: "troublemaker",
-    description: "Small orange troublemaker, sneezy boy, loves cuddles, short stubby legs.",
-    imageUrl: "/images/card-5.png",
+    description:
+      "Small orange troublemaker, sneezy boy, loves cuddles, short stubby legs.",
+    imageUrl: "/images/Chucky.png",
   },
   {
     id: 6,
     name: "Grace",
     type: "Psychic",
     personality: "diva",
-    description: "Tiny gray diva, spoiled, always talking back, has a signature head twist.",
-    imageUrl: "/images/card-6.png",
+    description:
+      "Tiny gray diva, spoiled, always talking back, has a signature head twist.",
+    imageUrl: "/images/Grace.png",
   },
   {
     id: 7,
     name: "Big Boy",
     type: "Ground",
     personality: "lazy",
-    description: "Huge tabby with massive paws, loves laying in bed and bathing in sunlight.",
-    imageUrl: "/images/card-7.png",
+    description:
+      "Huge tabby with massive paws, loves laying in bed and bathing in sunlight.",
+    imageUrl: "/images/BigBoy.png",
   },
   {
     id: 8,
@@ -75,15 +80,16 @@ const catemons = [
     type: "Ice",
     personality: "majestic",
     description: "Ancient majestic white cat with beautiful blue eyes.",
-    imageUrl: "/images/card-8.png",
+    imageUrl: "/images/Happy.png",
   },
   {
     id: 9,
     name: "Ginger",
     type: "Grass",
     personality: "mesmerizing",
-    description: "Multicolored patterns with mesmerizing green eyes, similar build to Chucky.",
-    imageUrl: "/images/card-9.png",
+    description:
+      "Multicolored patterns with mesmerizing green eyes, similar build to Chucky.",
+    imageUrl: "/images/Ginger.png",
   },
 ];
 
