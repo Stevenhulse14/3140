@@ -1,0 +1,165 @@
+.flyer-badge {
+  font-weight: 800;
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(135deg, var(--bc-gold), #ffdc72);
+  color: #341500;
+}
+
+.highlights strong,
+.speaker strong,
+.register strong {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.panel p {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.chip {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(214, 163, 23, 0.16);
+  border: 1px solid rgba(214, 163, 23, 0.28);
+  color: #ffe7a2;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.cta-box {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(214, 163, 23, 0.14),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1px solid rgba(214, 163, 23, 0.3);
+}
+
+.qr-placeholder {
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 18px;
+  margin: 12px 0 14px;
+  background:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 28px 28px;
+  background-position:
+    0 0,
+    0 14px,
+    14px -14px,
+    -14px 0px;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--bc-gold), #f3ca57);
+  color: #2b1600;
+  font-weight: 900;
+}
+
+.footer {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.code-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.code-strip span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 860px) {
+  body {
+    padding: 14px;
+  }
+
+  .flyer {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .hero,
+  .content-grid,
+  .footer {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .highlights {
+    grid-row: auto;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .flyer {
+    width: 8.5in;
+    min-height: 11in;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    page-break-inside: avoid;
+  }
+}
