@@ -1,3 +1,7 @@
+/**
+ * Marketing-style landing: hero promos and CTAs.
+ * Authenticated users see links into Find/Team; guests see signup/login.
+ */
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 

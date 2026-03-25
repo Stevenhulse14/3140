@@ -1,8 +1,19 @@
+/**
+ * Per-user Pokémon ownership: team (max 6), box, catch history, and moves.
+ *
+ * Data model (see db/schema.sql):
+ * - `user_pokemon` — one row per caught instance; links auth user → species via
+ *   pokeapi_id; `current_location` is `team` or `box`; `team_slot` is 1–6 or null.
+ * - `catch_history` — append-only log for dashboard / analytics.
+ *
+ * All queries scope by user_id from the verified JWT (never trust client id).
+ */
 import { getSupabaseAdmin } from '../utils/supabase.js'
 import { enrichWithPokemon } from './enrichUserPokemon.js'
 
 const MAX_TEAM = 6
 
+/** Count rows on active team (used before catch and before promote). */
 export async function countTeam(userId) {
   const supabase = getSupabaseAdmin()
   const { count, error } = await supabase
@@ -14,6 +25,10 @@ export async function countTeam(userId) {
   return count ?? 0
 }
 
+/**
+ * Finds the lowest free slot 1..6 for a new team member.
+ * Uses existing team rows to avoid duplicate team_slot (DB unique index helps too).
+ */
 async function nextTeamSlot(userId) {
   const supabase = getSupabaseAdmin()
   const { data, error } = await supabase
@@ -29,6 +44,15 @@ async function nextTeamSlot(userId) {
   return null
 }
 
+/**
+ * Inserts a new caught Pokémon and a history row.
+ *
+ * Rules:
+ * - If party already has 6, or `forceBox` is true → box (no team_slot).
+ * - Else assign next free team_slot and set location `team`.
+ *
+ * Returns where it landed so the UI can toast appropriately.
+ */
 export async function catchPokemon({
   userId,
   pokeapiId,
@@ -120,6 +144,7 @@ export async function listHistory(userId, limit = 50) {
   return data || []
 }
 
+/** Latest user_pokemon rows (any location) for “recent catches” widgets. */
 export async function listRecentCatches(userId, limit = 5) {
   const supabase = getSupabaseAdmin()
   const { data, error } = await supabase
@@ -142,6 +167,9 @@ export async function totalCaught(userId) {
   return count ?? 0
 }
 
+/**
+ * Box → team: requires an empty team slot and verifies ownership + location.
+ */
 export async function promoteFromBox(userId, userPokemonId) {
   const supabase = getSupabaseAdmin()
   const teamCount = await countTeam(userId)
@@ -183,6 +211,7 @@ export async function promoteFromBox(userId, userPokemonId) {
   return updated
 }
 
+/** Team → box: clears team_slot so the slot can be reused. */
 export async function demoteToBox(userId, userPokemonId) {
   const supabase = getSupabaseAdmin()
   const { data: row, error: fetchErr } = await supabase

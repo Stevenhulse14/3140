@@ -1,3 +1,10 @@
+/**
+ * Reads the global `pokemon` table (seeded from PokéAPI) with a short in-memory
+ * cache so repeated /find requests do not hammer Supabase.
+ *
+ * invalidatePokemonCache() exists for tests or after a re-seed if you extend
+ * the app to call it from an admin route.
+ */
 import { getSupabaseAdmin } from '../utils/supabase.js'
 
 let cache = null
@@ -20,6 +27,7 @@ export function invalidatePokemonCache() {
   cacheAt = 0
 }
 
+/** True if any of the Pokémon’s types appears in the zone’s allowed list. */
 export function pokemonMatchesZoneTypes(row, zoneTypes) {
   const types = (row.types || []).map((t) => String(t).toLowerCase())
   return types.some((t) => zoneTypes.includes(t))

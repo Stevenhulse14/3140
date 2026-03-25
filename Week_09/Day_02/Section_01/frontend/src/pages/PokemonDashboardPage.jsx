@@ -1,3 +1,7 @@
+/**
+ * Trainer hub: reads aggregated GET /pokemon/dashboard via TrainerContext.
+ * Shows party preview, box/total stats, recent catches, and journal excerpt.
+ */
 import { Link } from 'react-router-dom'
 import { useTrainer } from '../context/TrainerContext.jsx'
 import { DashboardCard } from '../components/DashboardCard.jsx'

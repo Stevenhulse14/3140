@@ -1,3 +1,7 @@
+/**
+ * Reusable panel for the trainer dashboard grid.
+ * Keeps markup consistent (title + body slot for charts, lists, or stats).
+ */
 export function DashboardCard({ title, children, className = '' }) {
   return (
     <article className={`dash-card ${className}`.trim()}>

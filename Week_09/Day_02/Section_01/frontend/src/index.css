@@ -1,3 +1,7 @@
+/*
+ * Trainer Quest — global theme (typography, layout primitives, page sections).
+ * Component-specific class names match JSX in src/pages and src/components.
+ */
 :root {
   --bg-deep: #0c0b12;
   --bg-panel: rgba(22, 20, 35, 0.92);

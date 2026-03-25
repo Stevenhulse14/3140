@@ -1,3 +1,9 @@
+/**
+ * Grid of biome tiles for the Find page.
+ *
+ * Each tile’s `key` must match backend zone keys (forest, cave, …).
+ * CSS variables (--zone-gradient) hook into index.css for per-tile backgrounds.
+ */
 import { ZONE_LIST } from '../constants/zones.js'
 
 export function ZoneSelector({ value, onChange, disabled }) {

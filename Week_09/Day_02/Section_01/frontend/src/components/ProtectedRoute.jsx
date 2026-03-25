@@ -1,3 +1,12 @@
+/**
+ * Route guard: renders children only when the user has a valid token.
+ *
+ * If unauthenticated, redirects to /login and passes the current location in
+ * state so LoginPage can send the user back after a successful sign-in.
+ *
+ * `loading` is kept for API compatibility; AuthContext currently hydrates sync
+ * from localStorage so loading stays false.
+ */
 import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 

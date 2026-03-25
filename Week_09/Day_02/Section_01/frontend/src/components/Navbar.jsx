@@ -1,3 +1,9 @@
+/**
+ * Global navigation: brand, main links, auth actions.
+ *
+ * Trainer-only links (Dashboard, Find, Team, Box) render only when authenticated
+ * so guests see a simpler menu and are nudged toward signup/login.
+ */
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 

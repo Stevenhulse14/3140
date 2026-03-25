@@ -1,3 +1,7 @@
+/**
+ * Active party (up to 6): data from TrainerContext team list.
+ * PATCH /pokemon/team with demote_user_pokemon_id sends a member to the Box.
+ */
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { apiFetch } from '../services/api.js'
@@ -7,6 +11,7 @@ import { TypeBadge } from '../components/TypeBadge.jsx'
 import { formatPokemonName } from '../utils/format.js'
 import { getZoneTheme } from '../constants/zones.js'
 
+/** PokéAPI stat keys → short labels for the stat grid. */
 const STAT_LABELS = [
   ['hp', 'HP'],
   ['attack', 'Atk'],

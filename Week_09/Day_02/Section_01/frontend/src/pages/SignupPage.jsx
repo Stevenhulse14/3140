@@ -1,3 +1,8 @@
+/**
+ * Registration via POST /api/auth/signup.
+ * If Supabase returns no session (e.g. email confirm required), user stays logged out
+ * until they complete the flow — we surface that with an info toast.
+ */
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { toast } from 'react-toastify'

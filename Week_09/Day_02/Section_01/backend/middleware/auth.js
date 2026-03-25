@@ -1,8 +1,16 @@
 import { getSupabaseAnon } from '../utils/supabase.js'
 
 /**
- * Verifies Supabase JWT and attaches req.user = { id, email }.
- * Use after optionalAuth if you need strict protection.
+ * Protects routes that need a logged-in user.
+ *
+ * How it works:
+ * - Reads `Authorization: Bearer <access_token>` from the request.
+ * - Calls Supabase `auth.getUser(token)` with the **anon** key — this validates
+ *   the JWT signature and expiry without needing the service role.
+ * - On success, attaches `req.user` { id, email } for controllers/services.
+ *
+ * Why anon key for verification? Supabase documents using getUser(jwt) to
+ * validate access tokens issued by signIn/signUp.
  */
 export async function requireAuth(req, res, next) {
   const header = req.headers.authorization || ''

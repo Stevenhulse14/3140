@@ -5,10 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // Listen on all interfaces so tools like ngrok can reach the dev server.
+    // Bind on all interfaces so LAN / tunnel tools (ngrok, etc.) can connect.
     host: '0.0.0.0',
-    // Allow tunnel hostnames (leading dot = suffix match per Vite docs).
+    // Vite 6+ host check: allow tunnel subdomains without listing each URL.
+    // Leading dot = suffix match (.ngrok-free.dev, .ngrok.io).
     allowedHosts: ['.ngrok-free.dev', '.ngrok.io'],
+    // Dev-only proxy: browser calls /api/... → Express on port 4000 (no CORS hassle).
     proxy: {
       '/api': {
         target: 'http://localhost:4000',

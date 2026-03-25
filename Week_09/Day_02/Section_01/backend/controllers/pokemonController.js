@@ -1,3 +1,9 @@
+/**
+ * HTTP layer for Pokémon features: validates input shape lightly, reads req.user
+ * from requireAuth, and delegates all DB rules to services.
+ *
+ * Naming: JSON bodies use snake_case for API consistency with Supabase columns.
+ */
 import { findEncounterForZone } from '../services/encounterService.js'
 import { getAllPokemonRows } from '../services/pokemonCatalogService.js'
 import {
@@ -12,6 +18,7 @@ import {
   totalCaught,
 } from '../services/userPokemonService.js'
 
+/** Public list of seeded species (trimmed fields for bandwidth). */
 export async function getCatalog(req, res, next) {
   try {
     const rows = await getAllPokemonRows()
@@ -29,6 +36,7 @@ export async function getCatalog(req, res, next) {
   }
 }
 
+/** GET ?zone=forest — random encounter filtered (or fallback) by zone types. */
 export async function findEncounter(req, res, next) {
   try {
     const zone = req.query.zone
@@ -39,6 +47,10 @@ export async function findEncounter(req, res, next) {
   }
 }
 
+/**
+ * Records a catch for req.user. Body includes pokeapi_id from the encounter UI.
+ * force_box: when true, always stores in box (party-full confirmation flow).
+ */
 export async function postCatch(req, res, next) {
   try {
     const userId = req.user.id
@@ -75,6 +87,10 @@ export async function getTeam(req, res, next) {
   }
 }
 
+/**
+ * PATCH body: either promote from box to team or demote from team to box.
+ * IDs are rows in user_pokemon (UUID), not pokeapi_id.
+ */
 export async function patchTeam(req, res, next) {
   try {
     const { promote_user_pokemon_id: promoteId, demote_user_pokemon_id: demoteId } =
@@ -104,6 +120,7 @@ export async function getBox(req, res, next) {
   }
 }
 
+/** Convenience alias: promote from box (same service as patchTeam promote). */
 export async function patchBox(req, res, next) {
   try {
     const { promote_user_pokemon_id: promoteId } = req.body || {}
@@ -126,6 +143,10 @@ export async function getHistory(req, res, next) {
   }
 }
 
+/**
+ * Aggregates several queries in parallel for the trainer dashboard (one round
+ * trip instead of many from the browser).
+ */
 export async function getDashboard(req, res, next) {
   try {
     const userId = req.user.id

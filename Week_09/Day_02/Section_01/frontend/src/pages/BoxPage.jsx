@@ -1,3 +1,7 @@
+/**
+ * Storage UI: loads GET /pokemon/box directly (full box list with details on expand).
+ * PATCH /pokemon/box promotes a stored Pokémon onto the team if a slot exists.
+ */
 import { useState, useEffect, useCallback } from 'react'
 import { toast } from 'react-toastify'
 import { apiFetch } from '../services/api.js'

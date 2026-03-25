@@ -1,6 +1,14 @@
 /**
- * Zone keys must match query params (lowercase) and frontend routes.
- * `types` lists primary PokéAPI type slugs used to filter seeded Pokémon.
+ * Zone configuration for encounter filtering.
+ *
+ * - `key` must match:
+ *   - API query `GET /pokemon/find?zone=<key>`
+ *   - Frontend zone tiles (constants/zones.js uses the same keys)
+ * - `types` are PokéAPI type slugs (lowercase), matched against each row’s
+ *   `types` array in the `pokemon` table after seeding.
+ *
+ * If no species match a zone, encounterService falls back to the full table
+ * so the app still returns *something* after seeding.
  */
 export const ZONES = {
   forest: {

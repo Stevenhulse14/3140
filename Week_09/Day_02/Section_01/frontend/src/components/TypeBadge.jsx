@@ -1,3 +1,9 @@
+/**
+ * Small pill showing a Pokémon type slug (e.g. "fire", "water").
+ *
+ * Colors follow common fandom/game-inspired hex values for quick recognition.
+ * The API stores lowercase type names from PokéAPI — we normalize with toLowerCase().
+ */
 const TYPE_COLORS = {
   normal: '#a8a878',
   fire: '#f08030',

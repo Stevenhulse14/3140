@@ -1,3 +1,12 @@
+/**
+ * UI state for the Find (wild encounter) page only.
+ *
+ * - selectedZone: which biome tile is active (must match API zone keys).
+ * - encounter: last JSON from GET /pokemon/find?zone=…
+ * - finding: in-flight request flag for buttons/spinner behavior.
+ *
+ * Clearing encounter when changing zone avoids showing a Pokémon from the wrong biome.
+ */
 import {
   createContext,
   useCallback,

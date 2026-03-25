@@ -1,3 +1,10 @@
+/**
+ * Thin fetch wrapper for the Express API.
+ *
+ * - `base` is VITE_API_URL or `/api` (Vite dev server proxies /api → backend).
+ * - Pass `token` to send Authorization: Bearer for protected routes.
+ * - Non-OK responses throw Error with .status and .data for callers (e.g. toast).
+ */
 const base = import.meta.env.VITE_API_URL || '/api'
 
 async function parseJson(res) {

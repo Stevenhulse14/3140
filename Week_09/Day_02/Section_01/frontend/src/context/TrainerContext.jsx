@@ -1,3 +1,12 @@
+/**
+ * Trainer / dashboard data: team summary, recents, history counts.
+ *
+ * Fetches GET /pokemon/dashboard when the user has a token (see useEffect).
+ * Child pages call `refresh()` after mutations (catch, box ↔ team) so widgets
+ * stay in sync without full page reload.
+ *
+ * Derived fields (team, boxCount, …) default to empty/zero when dashboard is null.
+ */
 import {
   createContext,
   useCallback,

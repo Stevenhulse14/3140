@@ -1,3 +1,9 @@
+/**
+ * Express error-handling middleware (must be registered last in app.js).
+ *
+ * Controllers call `next(err)` or services throw errors with `err.status`.
+ * We avoid leaking internal messages on 500 responses for a friendlier API.
+ */
 export function errorHandler(err, req, res, next) {
   // eslint-disable-next-line no-console
   console.error(err)

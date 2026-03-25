@@ -1,3 +1,10 @@
+/**
+ * Joins `user_pokemon` rows with base `pokemon` rows by pokeapi_id.
+ *
+ * PostgREST embeds (`select('*, pokemon(*)')`) depend on FK naming; this helper
+ * keeps responses predictable: each user row gets a `pokemon` object with
+ * sprite, types, base stats, etc.
+ */
 import { getSupabaseAdmin } from '../utils/supabase.js'
 
 export async function enrichWithPokemon(rows) {

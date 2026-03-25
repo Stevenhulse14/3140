@@ -1,3 +1,7 @@
+/**
+ * Email/password login via POST /api/auth/login.
+ * On success AuthContext stores JWT; Navigate sends user to `state.from` or /pokemon.
+ */
 import { useState } from 'react'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -6,6 +10,7 @@ import { useAuth } from '../context/AuthContext.jsx'
 export function LoginPage() {
   const { login, isAuthenticated, loading } = useAuth()
   const location = useLocation()
+  /** Deep link return after auth (set by ProtectedRoute). */
   const from = location.state?.from?.pathname || '/pokemon'
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

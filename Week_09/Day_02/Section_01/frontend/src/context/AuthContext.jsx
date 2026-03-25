@@ -1,3 +1,16 @@
+/**
+ * Authentication state: login/signup/logout via API; session persisted locally.
+ *
+ * Flow:
+ * - Login/signup POST returns Supabase session { access_token, refresh_token, user }.
+ * - We store a small JSON blob in localStorage so refresh keeps the user signed in.
+ * - `token` (access_token) is sent on every protected apiFetch call.
+ *
+ * readInitialAuth runs once via useState(initializer) — avoids useEffect for
+ * hydration and satisfies React’s “no sync setState in effect” lint guidance.
+ *
+ * The browser never holds the Supabase service key; only the backend talks to DB.
+ */
 import {
   createContext,
   useCallback,

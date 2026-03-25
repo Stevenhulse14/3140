@@ -1,3 +1,16 @@
+/**
+ * Top-level routing and providers.
+ *
+ * Provider order (outer → inner):
+ * 1. BrowserRouter — URL ↔ screen mapping.
+ * 2. ToastContainer — global notifications (catch flow, API errors).
+ * 3. AuthProvider — JWT + user in memory/localStorage; all API auth uses token.
+ * 4. TrainerProvider — dashboard aggregate from GET /pokemon/dashboard.
+ * 5. EncounterProvider — Find page zone + current encounter state.
+ *
+ * ProtectedRoute wraps pages that need a token; it redirects to /login with
+ * `state.from` so Login can return the user to their intended page.
+ */
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { AuthProvider } from './context/AuthContext.jsx'

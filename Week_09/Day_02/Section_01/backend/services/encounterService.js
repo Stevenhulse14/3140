@@ -1,3 +1,14 @@
+/**
+ * Builds a random “wild encounter” for a given zone.
+ *
+ * Algorithm:
+ * 1. Resolve zone config (400 if unknown).
+ * 2. Load all seeded pokemon rows (cached in pokemonCatalogService).
+ * 3. Filter rows whose `types` overlap zone.types.
+ * 4. If filter is empty, use the full table (seed data might lack some types).
+ * 5. Pick uniformly at random from the pool.
+ * 6. Shape the response for the client (moves capped at 4 for UI).
+ */
 import { getZone } from '../config/zones.js'
 import {
   getAllPokemonRows,

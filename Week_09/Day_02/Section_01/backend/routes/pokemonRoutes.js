@@ -1,10 +1,17 @@
+/**
+ * Pokémon feature routes under /api/pokemon.
+ *
+ * Order matters in Express:
+ * - GET `/` (catalog) is registered BEFORE `requireAuth` so anyone can list
+ *   seeded species (useful for demos / future Pokédex views).
+ * - All routes after `router.use(requireAuth)` need a valid Supabase JWT.
+ */
 import { Router } from 'express'
 import { requireAuth } from '../middleware/auth.js'
 import * as pokemonController from '../controllers/pokemonController.js'
 
 const router = Router()
 
-// Public catalog (optional: could protect — kept public for browsing species)
 router.get('/', pokemonController.getCatalog)
 
 router.use(requireAuth)

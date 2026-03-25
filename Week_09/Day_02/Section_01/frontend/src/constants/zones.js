@@ -1,4 +1,13 @@
-/** Zone keys match backend `config/zones.js` and API query `?zone=` */
+/**
+ * Frontend-only presentation for each biome (colors, gradients, copy).
+ *
+ * `key` must stay aligned with:
+ * - `backend/config/zones.js` (encounter filtering)
+ * - API `GET /pokemon/find?zone=<key>`
+ *
+ * Backend config holds types; this file adds UI theme tokens consumed by
+ * FindPage (page background + encounter card CSS variables) and dashboard hints.
+ */
 
 export const ZONE_THEMES = {
   forest: {
@@ -102,6 +111,7 @@ export const ZONE_THEMES = {
   },
 }
 
+/** Stable iteration order for ZoneSelector (object definition order). */
 export const ZONE_LIST = Object.values(ZONE_THEMES)
 
 export function getZoneTheme(key) {

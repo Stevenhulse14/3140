@@ -1,3 +1,11 @@
+/**
+ * Wild encounter flow:
+ * 1. User picks a zone → EncounterContext holds selection; page background uses theme.gradient.
+ * 2. "Reveal encounter" → GET /pokemon/find?zone=… → shows species card + stats/moves.
+ * 3. "Catch" → POST /pokemon/catch with pokeapi_id, zone, moves, stats, optional force_box.
+ *    - If team already has 6 Pokémon, we show a Toastify dialog; confirming sends force_box.
+ * 4. After catch, TrainerContext.refresh() updates counts; encounter clears for the next hunt.
+ */
 import { useCallback } from 'react'
 import { toast } from 'react-toastify'
 import { ZoneSelector } from '../components/ZoneSelector.jsx'
