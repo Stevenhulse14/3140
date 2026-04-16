@@ -8,12 +8,14 @@
  * 4. /api/* — all feature routes (auth, zones, pokemon).
  * 5. errorHandler — last middleware; catches errors passed via next(err).
  */
-import express from 'express'
-import cors from 'cors'
-import routes from './routes/index.js'
-import { errorHandler } from './middleware/errorHandler.js'
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import routes from "./routes/index.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 
-const app = express()
+const app = express();
+app.use(morgan("dev"));
 
 // Reflect request Origin and allow cookies/credentials if you add them later.
 app.use(
@@ -21,16 +23,16 @@ app.use(
     origin: true,
     credentials: true,
   }),
-)
-app.use(express.json())
+);
+app.use(express.json());
 
-app.get('/health', (req, res) => {
-  res.json({ ok: true })
-})
+app.get("/health", (req, res) => {
+  res.json({ ok: true });
+});
 
 // API namespace keeps public paths (/) separate from JSON API in production.
-app.use('/api', routes)
+app.use("/api", routes);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
-export default app
+export default app;
